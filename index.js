@@ -48,9 +48,9 @@ module.exports = function(sails) {
 
               Object.keys(cache).some(function(hash) {
 
-                var fileCache = cache[hash]; 
-              
-                if (fileCache.options.filename != file) {
+                var fileCache = cache[hash];
+
+                if (!fileCache.options || fileCache.options.filename != file) {
                   return false;
                 }
 
